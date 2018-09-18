@@ -1,0 +1,15 @@
+:host {
+    display: block;
+    margin-left:auto;
+}
+.menu {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    li {
+        float: right;
+        padding: 0 10px;
+        margin: 0;
+        list-style: none
+    }
+}

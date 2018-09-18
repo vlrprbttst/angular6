@@ -1,0 +1,15 @@
+<div class="page">
+    <div class="sayhello" (click)="toggleClass = !toggleClass" [ngClass]="toggleClass ? 'active' : ''"><img src="https://deskmoz.com/wp-content/uploads/2017/10/hello.png" class="responsive-img"></div>
+    <div class="top">
+        <div class="toggle-menu" (click)="toggleClass = !toggleClass" [ngClass]="toggleClass ? 'active' : ''">
+            toggleClass
+        </div>
+        <div class="logo">
+            <img src="http://placehold.it/80x40">
+        </div>
+        <app-menu></app-menu>
+    </div>
+    <div class="inner">
+        <router-outlet></router-outlet>
+    </div>
+</div>

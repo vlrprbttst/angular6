@@ -9,7 +9,7 @@ import { Page2Component } from './page2/page2.component';
 import { MenuComponent } from './menu/menu.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { HeadroomModule } from '@ctrl/ngx-headroom';
+import { HeadroomModule } from '@ctrl/ngx-headroom';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
@@ -31,7 +31,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    //HeadroomModule,
+    HeadroomModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

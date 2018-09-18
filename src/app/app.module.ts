@@ -11,6 +11,8 @@ import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeadroomModule } from '@ctrl/ngx-headroom';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CardComponent } from './shared/card/card.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 const appRoutes: Routes = [
@@ -26,12 +28,14 @@ const appRoutes: Routes = [
     MenuComponent,
     Page1Component,
     Page2Component,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HeadroomModule,
+    MatCardModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

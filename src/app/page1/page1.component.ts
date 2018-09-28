@@ -9,9 +9,12 @@ import { CardComponent } from '../shared/card/card.component';
 })
 export class Page1Component implements OnInit {
 
+    
+
   constructor() { }
 
   ngOnInit() {
+     
   }
 
 }

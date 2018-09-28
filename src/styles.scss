@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    font-size:16px;
+    line-height: 1.6;
     &.page404 {
         height: 100%;
         .inner {
@@ -43,3 +45,11 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+code {
+    background: #f2f2f2;
+    padding: 3px;
+}
+
+li {
+    margin-bottom: 10px;
+}

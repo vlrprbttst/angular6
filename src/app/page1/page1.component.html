@@ -1,16 +1,108 @@
-<h1>
-    Page 1: Welcome
-</h1>
 
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae natus illo animi reiciendis quidem nemo voluptas perferendis, eligendi voluptates quisquam maxime labore totam, dicta distinctio. Dignissimos aliquid dolorem at. Rem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae natus illo animi reiciendis quidem nemo voluptas perferendis, eligendi voluptates quisquam maxime labore totam, dicta distinctio. Dignissimos aliquid dolorem at. Rem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae natus illo animi reiciendis quidem nemo voluptas perferendis, eligendi voluptates quisquam maxime labore totam, dicta distinctio. Dignissimos aliquid dolorem at. Rem! <br><br>
+    <h1>
+        Requisiti && installazione
+    </h1>
 
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae natus illo animi reiciendis quidem nemo voluptas perferendis, eligendi voluptates quisquam maxime labore totam, dicta distinctio. Dignissimos aliquid dolorem at. Rem!
-</p>
+    <ul>
+        <li>
+            Installare l'ultimo <code>angular-cli</code>: <code>npm uninstall -g @angular/cli && npm cache verify && npm install -g @angular/cli@latest</code>.
+        </li>
+        <li>
+            Installare con <code>nvm</code> Node 9 e switcha su 9: <code>nvm install 9 && nvm use 9</code>.
+        </li>
+        <li>
+            Vai nella cartella dove vuoi che si trovi la tua app e builda un nuovo progetto in scss con <br><code>ng new nome-sito --style=scss</code>
+        </li>
+        <li>
+            avvia l'app con <code>npm start</code> e vai su <code>localhost:4200</code>
+        </li>
+    </ul>
 
-<app-card>
-    hello app card
+    <p>Ora avete un'app in Angular 6</p>
+
+    <h1>
+        Features
+    </h1>
+    <h2>
+        Architettura app
+    </h2>
+
+    <ul>
+        <li>
+            <code>src/</code> è la cartella coi sorgenti. Si lavora là.
+        </li>
+        <li>
+            <code>dist/</code> è la cartella con l'app compilata. Per compilare l'app: <code>ng build</code>
+        </li>
+        <li>
+            Se l'app non finirà nella root dell'hosting, si può buildare con base-href differente in questo modo: <br>
+            <code>ng build --base-href http://sito.com/sottocartella/</code>. Questo è necessario perché spesso i file vengono referenziati con il path che parte dalla root tipo <code>./page1/page1.component</code>
+        </li>
+        <li>
+            Nella root <code>styles.scss</code> è l'unico file che ha influenza su TUTTA la app. Tutti gli altri .scss sono scopati nei componenti, e non hanno modo di influenzare classi esterne o diverse da quelle presenti nell'html dello stesso componente. Un modo in verità c'è ma non è una best practice.
+        </li>
+        <li>
+            Nella root c'è <code>index.html</code>: quello è il contenitore di tutta la app. Dentro ci sono le cose classiche tipo l'<code>head</code> ecc. Il tag <code>app-root</code> è il contenitore principale di angular.
+        </li>
+        <li>
+            il loader: css va messo inline nell'head, e l'html dentro app-root in modo che quando poi i contenuti di app-root vengono caricati, il loader viene distrutto
+        </li>
+        <li>
+            in <code>assets</code> ci sono gli assets: immagini, font, ecc.
+        </li>
+    </ul>
+
+    <h2>
+        Concetti base: la cartella <code>APP</code>
+    </h2>
+
+    <p>
+        La cartella <code>app/</code> è il primo e principale modulo del sito. Ciò che mettete qui è poi il codice che finisce nel tag <code>app-root</code> che trovammo nell'<code>index.html</code>. E' considerato in gergo angularesco un MODULO nel senso che è una macrosezione del nostro sito. Qui ci finirà l'html base del nostro sito, tipo il menu, il footer, includeremo i js che ci servono a livello globale ecc. ecc.<br><br>
+
+        Ogni modulo, così come ogni componente, è costituito da una cartella con vari file, ai noi interessano i seguenti file:
+    </p>
+    <ul>
+        <li>html</li>
+        <li>scss</li>
+        <li>.ts</li>
+    </ul>
+
+        <p>
+            L'html è appunto l'html. Il file scss ha i css di quello specifico pezzo di sito. Non andranno in conflitto con nient'altro perché angular poi gli appiopperà un suffisso per far diventare ogni classe univoca. Ad esempio se in style.scss avete usato <code>.menu</code>, qui in <code>app.component.scss</code> potrete tranquillamente riusare una classe <code>.menu</code> e non andranno fra loro in conflitto.
+        </p>
+
+        <p>
+            Il file <code>.ts</code> contiene la logica. Essendo il <code>.ts</code> del modulo app, tutto ciò che metteremo qui influenzerà sia app.module sia tutti i componenti in esso contenuti.
+        </p>
+
+        <p>
+            In cima troveremo degli <code>import</code>. Angular ha 7 milioni di funzionalità, ogni funzionalità va <b>importata</b> per essere usata, sennò non funziona. Questo evita di importare tutte e 7 milioni di funzionalità e magari non le usi. Quindi per ogni nuovo modulo e componente, bisogna assicurarsi di importare sempre le funzionalità che ci servono nello sviluppo della pagina in questione. Ad esempio: usi delle funzionalità angular per un form? Devi importare il modulo form lì dove lo usi. Se vuoi che questa funzionalità sia importata su tutto il sito, va benissimo includerla in app.module.ts così sarà sempre disponibile.
+        </p>
+
+        <h3>Moduli imprescindibili</h3>
+
+        <p>
+            Alcuni sono da importare per forza qui, ad esempio: <br>
+            <img src="assets/images/import.png"> <br>
+            Sono le basi... L'unico degno di nota è router e routes. Quello serve per passare da una pagina all'altra
+        </p>
+
+        <p>
+            Segue l'inclusione di alcuni componenti che abbiamo creato noi. Se tu crei un componente e vuoi usarlo in questo "scope" (da app a tutte le sue sottocartelle), devi includerlo qui sia sopra con questa sintassi di importazione:
+            <br>
+            <img src="assets/images/import2.png"> <br>
+            sia sotto così: <br>
+            <img src="assets/images/import3.png"> <br>
+        </p>
+
+
+
+<app-card [cardtitle]="'titolo'" [cardcontent]="'contenuto'">
+    <div style="background:orange">ciao io posso contenere dell'html</div>
 </app-card>
+
+
+
 
 <mat-card class="example-card">
   <mat-card-header>

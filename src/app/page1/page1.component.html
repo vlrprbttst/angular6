@@ -95,14 +95,40 @@
             <img src="assets/images/import3.png"> <br>
         </p>
 
+        <h2>
+            Il Routing
+        </h2>
+        <p>
+            Su angular non si passa da una pagina all'altra bensì si carica una view piuttosto che un'altra. Non c'è mai un vero e proprio cambio di pagina. Il modulo ROUTING va richiamato in app.module in questo caso perché è lì che c'è l'unico menu dell'app.
+        </p>
+        <img src="assets/images/routing.png" alt="">
+        <p>
+            Le dichiarazioni del routing includono il path (url) e quale componente caricare in quella determinata url.
+        </p>
 
+        <h1>
+            Esempio di componente riutilizzabile fatto da me:
+        </h1>
 
-<app-card [cardtitle]="'titolo'" [cardcontent]="'contenuto'">
-    <div style="background:orange">ciao io posso contenere dell'html</div>
-</app-card>
+        <app-card [cardtitle]="'titolo'" [cardcontent]="'contenuto'">
+            <div>ciao io posso contenere dell'html</div>
+        </app-card>
 
+        <h1>
+            Inclusione di librerie esterne
+        </h1>
 
+        <p>
+            In questo esempio ho usato "headroom" per far sparire l'header bar quando scrolli e farla riapparire quando torni su e ho incluso angular material.
+        </p>
+        <ul>
+            <li>headroom: facile da capire, documentazione su <a href="https://github.com/TypeCtrl/ngx-headroom" target="_blank">https://github.com/TypeCtrl/ngx-headroom</a></li>
+            <li>
+                material: documentazione per installare <a href="https://material.angular.io/guide/getting-started" target="_blank">qui</a>. Una volta fatto l'npm install, richiamare i componenti che servono: esempio in app.module della card.
+            </li>
+        </ul>
 
+        <h3>esempio di card material</h3>
 
 <mat-card class="example-card">
   <mat-card-header>
@@ -118,4 +144,4 @@
       bred for hunting.
     </p>
   </mat-card-content>
-</mat-card>
+</mat-card> <br><br>

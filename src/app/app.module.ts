@@ -16,9 +16,11 @@ import {MatCardModule} from '@angular/material/card';
 //wysiwyg
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 // jquery
-declare var $: any;
+import * as $ from 'jquery';
 //jquery funziona
-//$("body").css("background","red");
+
+
+
 
 const appRoutes: Routes = [
     { path: 'page2', component: Page2Component },

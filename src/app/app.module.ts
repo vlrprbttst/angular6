@@ -13,7 +13,12 @@ import { HeadroomModule } from '@ctrl/ngx-headroom';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CardComponent } from './shared/card/card.component';
 import {MatCardModule} from '@angular/material/card';
-
+//wysiwyg
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+// jquery
+declare var $: any;
+//jquery funziona
+//$("body").css("background","red");
 
 const appRoutes: Routes = [
     { path: 'page2', component: Page2Component },
@@ -36,6 +41,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     HeadroomModule,
     MatCardModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

@@ -1,0 +1,42 @@
+<h1>
+    News Api
+</h1>
+<h2>
+    <a href="https://www.smashingmagazine.com/2018/10/news-application-with-angular-and-material-design/" target="_blank">articolo relativo</a>
+</h2>
+
+<p>
+    Importiamo un po' di componenti material che ci servono per la grafica, il modulo http, news api service (di cui abbiamo ottenuto una api key gratis). Questo il sopra: <a href="http://prntscr.com/l213pr" target="_blank">http://prntscr.com/l213pr</a>, questo il sotto: <a href="http://prntscr.com/l214n0" target="_blank">http://prntscr.com/l214n0</a>
+</p>
+
+<p>
+    una volta fatto generiamo un nuovo <b>service provider </b> per consumare l'API.
+    <code>ng generate service NewsApi</code> <br><br>
+    Il resto leggilo nell'articolo.
+</p>
+
+<h1>
+    Articoli presi dall'API
+</h1>
+<!-- articoli -->
+<div class="card-cont">
+    <mat-card class="example-card"  *ngFor="let article of mArticles">
+        <mat-card-header>
+            <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
+            <mat-card-title class="title">{{article.title}}</mat-card-title>
+            <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="img-article" src={{article.urlToImage}} alt="">
+        <mat-card-content>
+            <p>
+                {{article.description}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions class="action-buttons">
+            <button mat-button color="primary"><mat-icon>thumb_up_alt</mat-icon> 12 Likes</button>
+            <button mat-button color="primary"><mat-icon>comment</mat-icon> Comments</button>
+            <button mat-button color="primary"><mat-icon>share</mat-icon> Share</button>
+            <a mat-button color="primary" href={{article.url}} target="_blank" ><mat-icon>visibility</mat-icon> More</a>
+        </mat-card-actions>
+    </mat-card>    
+</div>

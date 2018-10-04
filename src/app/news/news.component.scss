@@ -1,0 +1,13 @@
+
+.card-cont {
+    display:flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    .example-card {
+        width: 40%;
+        margin-bottom: 20px;
+    }
+}
+.mat-card-avatar {
+    background-size: 100%;
+}

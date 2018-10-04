@@ -23,6 +23,7 @@ body {
     .inner {
         margin: 0 auto;
         max-width: 800px;
+        position: relative;
     }
 }
 
@@ -52,4 +53,10 @@ code {
 
 li {
     margin-bottom: 10px;
+}
+
+router-outlet ~ * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }

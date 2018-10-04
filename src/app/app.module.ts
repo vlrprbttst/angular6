@@ -22,10 +22,6 @@ import { NewsApiService } from './news-api.service';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 // jquery
 import * as $ from 'jquery';
-//jquery funziona
-
-
-
 
 const appRoutes: Routes = [
     { path: 'news', component: NewsComponent },

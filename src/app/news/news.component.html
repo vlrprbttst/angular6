@@ -5,7 +5,7 @@
     <a href="https://www.smashingmagazine.com/2018/10/news-application-with-angular-and-material-design/" target="_blank">articolo relativo</a>
 </h2>
 
-<p>
+<p (click)="toggleClass = !toggleClass" [ngClass]="toggleClass ? 'active' : ''"> io
     Importiamo un po' di componenti material che ci servono per la grafica, il modulo http, news api service (di cui abbiamo ottenuto una api key gratis). Questo il sopra: <a href="http://prntscr.com/l213pr" target="_blank">http://prntscr.com/l213pr</a>, questo il sotto: <a href="http://prntscr.com/l214n0" target="_blank">http://prntscr.com/l214n0</a>
 </p>
 

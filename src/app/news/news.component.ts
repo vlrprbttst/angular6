@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NewsApiService } from '../news-api.service';
+import {MatCardModule} from '@angular/material';
 
 @Component({
   selector: 'app-news',

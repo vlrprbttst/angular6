@@ -22,9 +22,11 @@ import { NewsApiService } from './news-api.service';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 // jquery
 import * as $ from 'jquery';
+import { PippoComponent } from './pippo/pippo.component';
 
 const appRoutes: Routes = [
     { path: 'news', component: NewsComponent },
+    { path: 'ciao', component: PippoComponent },
     { path: 'page2', component: Page2Component },
     { path: 'page1', component: Page1Component },
     { path: '', component: Page1Component },
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     Page2Component,
     PageNotFoundComponent,
     CardComponent,
-    NewsComponent
+    NewsComponent,
+    PippoComponent
   ],
   imports: [
     BrowserModule,
@@ -66,5 +69,5 @@ const appRoutes: Routes = [
 
 export class AppModule {
     toggleClass: boolean = false;
-    
+
 }
